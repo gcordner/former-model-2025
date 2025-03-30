@@ -6,6 +6,20 @@
             "contentSize": "750px",
             "wideSize": "1200px"
         },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Bebas Neue, sans-serif",
+                    "name": "Bebas Neue",
+                    "slug": "bebas-neue"
+                },
+                {
+                    "fontFamily": "Montserrat, sans-serif",
+                    "name": "Montserrat",
+                    "slug": "montserrat"
+                }
+            ]
+        },
         "color": {
             "custom": true,
             "palette": []
@@ -28,6 +42,23 @@
         "typography": {
             "fontSize": "16px",
             "lineHeight": "1.6"
+        },
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                }
+            }
         }
     },
     "templateParts": [

@@ -12,7 +12,6 @@ $wide-width: ${wideWidth};
 
 fs.writeFileSync('./css/src/base/_theme-values.scss', scssVars);
 
-
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -43,7 +42,12 @@ module.exports = {
                 test: /\.(s[ac]ss|css)$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false // ⛔️ disables processing of url()
+                        }
+                    },
                     {
                         loader: 'sass-loader',
                         options: {
@@ -54,7 +58,6 @@ module.exports = {
                     }
                 ]
             }
-
         ]
     },
     plugins: [
