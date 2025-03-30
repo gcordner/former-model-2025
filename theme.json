@@ -3,11 +3,8 @@
     "version": 3,
     "settings": {
         "layout": {
-            "contentSize": "700px",
-            "wideSize": "1200px",
-            "defaultLayout": {
-                "type": "constrained"
-            }
+            "contentSize": "750px",
+            "wideSize": "1200px"
         },
         "color": {
             "custom": true,

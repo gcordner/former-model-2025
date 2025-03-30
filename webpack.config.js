@@ -1,3 +1,18 @@
+const fs = require('fs');
+const themeJson = require('./theme.json');
+
+// Generate _theme-values.scss dynamically
+const layout = themeJson.settings?.layout || {};
+const contentWidth = layout.contentSize || '700px';
+const wideWidth = layout.wideSize || '1200px';
+
+const scssVars = `$content-width: ${contentWidth};
+$wide-width: ${wideWidth};
+`;
+
+fs.writeFileSync('./css/src/base/_theme-values.scss', scssVars);
+
+
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
