@@ -1,18 +1,30 @@
+@use '../base/theme-values'as *;
+
+
 .site-header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 0 2rem;
     background-color: white;
     border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
+    max-width: $wide-width;
+    margin: auto;
 
     &.is-shrunk {
         padding: 0.5rem 2rem;
         background-color: #f9f9f9;
     }
+}
+
+.wp-block-site-title {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 2px;
 }
