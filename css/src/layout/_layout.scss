@@ -1,0 +1,7 @@
+@use '../base/theme-values'as *;
+
+.max-width--wide {
+    width: 100%;
+    max-width: $wide-width;
+    margin-inline: auto;
+}
