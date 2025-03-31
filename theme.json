@@ -18,7 +18,27 @@
                     "name": "Montserrat",
                     "slug": "montserrat"
                 }
-            ]
+            ],
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "0.875rem",
+                    "name": "Small"
+                },
+                {
+                    "slug": "medium",
+                    "size": "1rem",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "1.25rem",
+                    "name": "Large"
+                }
+            ],
+            "fontWeight": true,
+            "fontStyle": true,
+            "lineHeight": true
         },
         "color": {
             "custom": true,
@@ -40,23 +60,27 @@
     },
     "styles": {
         "typography": {
+            "fontFamily": "var(--wp--preset--font-family--montserrat)",
             "fontSize": "16px",
             "lineHeight": "1.6"
         },
         "elements": {
             "h1": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)",
+                    "fontWeight": "900"
                 }
             },
             "h2": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)",
+                    "fontWeight": "800"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)"
+                    "fontFamily": "var(--wp--preset--font-family--bebas-neue)",
+                    "fontWeight": "700"
                 }
             }
         },
