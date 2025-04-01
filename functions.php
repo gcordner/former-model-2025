@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Former Model Theme Setup
  */
 function former_model_setup() {
+	add_theme_support( 'block-template-parts' );
 	add_theme_support( 'block-editor-style' );
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'post-thumbnails' );
@@ -45,3 +46,12 @@ function former_model_enqueue_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'former_model_enqueue_assets', 20 );
+
+
+add_action( 'admin_notices', function () {
+	if ( wp_is_block_theme() ) {
+		echo '<div class="notice notice-success"><p>This is a block theme ✅</p></div>';
+	} else {
+		echo '<div class="notice notice-error"><p>This is NOT a block theme ❌</p></div>';
+	}
+} );
