@@ -4,28 +4,13 @@
  *
  * @package Former_Model
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
 /**
- * Former Model Theme Setup
+ * Enqueue the CSS files.
+ *
+ * @since 1.0.0
+ *
+ * @return void
  */
-function former_model_setup() {
-	add_theme_support( 'block-template-parts' );
-	add_theme_support( 'block-editor-style' );
-	add_theme_support( 'editor-styles' );
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'title-tag' );
-	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Menu', 'former-model' ),
-		)
-	);
-}
-add_action( 'after_setup_theme', 'former_model_setup' );
 
 /**
  * Enqueue theme CSS/JS compiled via Webpack.
