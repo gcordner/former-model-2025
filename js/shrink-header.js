@@ -1,5 +1,5 @@
 (function () {
-    const header = document.querySelector(".site-header");
+    const header = document.querySelector(".site-header.shrink-on-scroll");
     if (!header) return;
 
     const SHRINK_SCROLL_Y = 120;  // scroll position to shrink

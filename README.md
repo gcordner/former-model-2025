@@ -107,6 +107,43 @@ former-model/
 └── webpack.config.js
 ```
 
+## Sticky Header with Shrink-on-Scroll
+
+This theme includes optional JavaScript + SCSS support for a sticky header that shrinks when the user scrolls down and expands again when scrolling back up.
+
+### How to Enable It
+
+To apply the sticky + shrink behavior to any template part that uses `header.html`, simply add the `shrink-on-scroll` class when including the template part:
+
+```html
+<!-- Example for front-page.html or any template -->
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header shrink-on-scroll"} /-->
+```
+
+This will render the header with:
+
+```html
+<header class="site-header shrink-on-scroll">
+```
+
+The scroll behavior is triggered via `js/shrink-header.js`, which adds or removes an `.is-shrunk` class based on scroll position.
+
+### Behavior Summary
+
+- `.site-header`: shared styling applied to **all** headers
+- `.shrink-on-scroll`: enables scroll detection behavior via JavaScript
+- `.is-shrunk`: toggled by the script to trigger style changes (padding and site title scale)
+
+### SCSS Reference
+
+Styles for the header are defined in:
+
+```
+css/src/layout/_header.scss
+```
+
+Only headers with both `.site-header` and `.shrink-on-scroll` will activate the scroll behavior. All others will receive standard layout and typography styles.
+
 ## Variables from `theme.json`
 
 The following SCSS variables are auto-generated based on your `theme.json` layout:
@@ -140,4 +177,3 @@ This theme is licensed under the [GNU General Public License v2.0 or later](http
 Built by Geoff Cordner.
 
 More at [Former-model.com](https://former-model.com)
-
