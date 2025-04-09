@@ -46,3 +46,30 @@
         }
     }
 }
+
+.site-header--transparent {
+    background-color: transparent;
+    box-shadow: none;
+
+    .wp-block-site-title {
+        color: #fff;
+
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .menu-item a {
+        color: #fff !important;
+    }
+
+    .wp-block-navigation__responsive-container-close {
+        color: #ffffff;
+    }
+
+    .wp-block-navigation__responsive-container-open {
+        color: #ffffff;
+    }
+}
