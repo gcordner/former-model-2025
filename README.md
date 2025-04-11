@@ -1,3 +1,4 @@
+
 # Former Model WordPress Theme
 
 A clean, modern block theme built from scratch using WordPress Full Site Editing (FSE) and a lightweight Webpack-based build process. This theme includes SCSS partials, modular JavaScript, and design tokens (like widths) automatically synced from `theme.json`.
@@ -32,6 +33,7 @@ In the theme root:
 ```bash
 npm install
 ```
+
 ### 3. Build Assets
 
 There are three available scripts:
@@ -107,42 +109,35 @@ former-model/
 └── webpack.config.js
 ```
 
-## Sticky Header with Shrink-on-Scroll
+## Header Behavior and Utility Classes
 
-This theme includes optional JavaScript + SCSS support for a sticky header that shrinks when the user scrolls down and expands again when scrolling back up.
+The theme includes a flexible and modular header system designed to be reused and easily modified via utility classes.
 
-### How to Enable It
+### Core Header Classes
 
-To apply the sticky + shrink behavior to any template part that uses `header.html`, simply add the `shrink-on-scroll` class when including the template part:
+- `.site-header`: required base class for all headers, applies layout, flex settings, spacing, and base styles.
+- `.shrink-on-scroll`: adds scroll detection via JavaScript; adds `.is-shrunk` class on scroll to reduce padding and scale the site title.
+- `.is-shrunk`: toggled automatically when scroll behavior is active.
+- `.site-header--absolute`: positions the header absolutely at the top of the page (ideal for transparent overlays).
+- `.site-header--transparent`: adds a blurred, translucent background and switches text to white for dark overlays (intended for use over cover images).
+
+### Example Usage
+
+In a template like `front-page.html`, you might use:
 
 ```html
-<!-- Example for front-page.html or any template -->
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header shrink-on-scroll"} /-->
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header site-header--absolute site-header--transparent shrink-on-scroll"} /-->
 ```
 
-This will render the header with:
+This applies layout, transparent background, absolute positioning, and scroll behavior.
 
-```html
-<header class="site-header shrink-on-scroll">
-```
-
-The scroll behavior is triggered via `js/shrink-header.js`, which adds or removes an `.is-shrunk` class based on scroll position.
-
-### Behavior Summary
-
-- `.site-header`: shared styling applied to **all** headers
-- `.shrink-on-scroll`: enables scroll detection behavior via JavaScript
-- `.is-shrunk`: toggled by the script to trigger style changes (padding and site title scale)
-
-### SCSS Reference
-
-Styles for the header are defined in:
+All header styles are defined in:
 
 ```
 css/src/layout/_header.scss
 ```
 
-Only headers with both `.site-header` and `.shrink-on-scroll` will activate the scroll behavior. All others will receive standard layout and typography styles.
+You can mix and match classes as needed. Don’t want scroll behavior? Remove `shrink-on-scroll`. Want a normal header? Drop `site-header--absolute` and `site-header--transparent`.
 
 ## Variables from `theme.json`
 
