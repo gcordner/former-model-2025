@@ -1,9 +1,16 @@
 .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
     background-color: rgb(255, 255, 255);
 
     .wp-block-site-title {
@@ -48,8 +55,11 @@
 }
 
 .site-header--transparent {
-    background-color: transparent;
-    box-shadow: none;
+
+    background-color: rgba(0, 0, 0, 0.07); // translucent black background
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px); // for Safari
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); // soft drop shadow
 
     .wp-block-site-title {
         color: #fff;

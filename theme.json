@@ -79,6 +79,42 @@
                 "vh",
                 "vw",
                 "%"
+            ],
+            "spacingScale": {
+                "steps": 1,
+                "mediumStep": "0.5rem"
+            },
+            "spacingSizes": [
+                {
+                    "slug": "10",
+                    "size": "0.625rem",
+                    "name": "XS"
+                },
+                {
+                    "slug": "20",
+                    "size": "1rem",
+                    "name": "S"
+                },
+                {
+                    "slug": "30",
+                    "size": "1rem",
+                    "name": "S-M"
+                },
+                {
+                    "slug": "40",
+                    "size": "2rem",
+                    "name": "M"
+                },
+                {
+                    "slug": "60",
+                    "size": "4rem",
+                    "name": "L"
+                },
+                {
+                    "slug": "80",
+                    "size": "6rem",
+                    "name": "XL"
+                }
             ]
         },
         "typography": {
@@ -211,8 +247,8 @@
             "core/post-content": {
                 "spacing": {
                     "margin": {
-                        "top": "var(--wp--preset--spacing--60)",
-                        "bottom": "var(--wp--preset--spacing--60)"
+                        "top": "0",
+                        "bottom": "0"
                     }
                 }
             },

@@ -1,7 +1,17 @@
 @use '../base/theme-values'as *;
 
+body {
+    overflow-x: hidden;
+}
+
+
 .max-width--wide {
     width: 100%;
     max-width: $wide-width;
     margin-inline: auto;
+}
+
+.cover--intro {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
